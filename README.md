@@ -1,11 +1,12 @@
 # Fango
-An easy-to-use Python HTTP framework based on Flask blueprint with some Django features, e.g., DRF, middleware, DAO
+An easy-to-use Python HTTP framework based on Flask blueprint with some Django features, e.g., DRF, middleware, ORM
 
 ## Where Fango comes from
 `Fango` is the combination of `Flask` and `Django` since `Fango` is based on `Flask Blueprint` while it still has `Django` features like:
 1. DRF
 2. middleware
 3. ORM
+4. etc.
 
 ## How to use Fango
 Consider `Fango` as a boilerplate, two demos are attached in this repo, i.e., apps/pingpong and apps/store
@@ -38,13 +39,13 @@ in `apps` folder, `store` folder and following folder are constructed as below:
 ```
 ➜ tree apps/store
 apps/store
-├── __init__.py
+├── __init__.py -> step 4
 ├── dal
 │   ├── __init__.py
-│   └── store_model.py
+│   └── store_model.py -> step 3
 └── views
     ├── __init__.py
-    └── store.py
+    └── store.py -> step 2
 
 5 directories, 5 files
 
@@ -58,6 +59,7 @@ View class should include following attributes:
 
 #### 3. Write your DB model under dal if necessary
 just like `SQLAlchemy`, a CommonFieldsMixin is provided(including autoincrement ID and create time) under `utils.db.orm_model_base.CommonFieldsMixin`
+
 simple `create`, `filter` method is provided in `utils.db.model.Model`
 #### 4. Register your views in `__init__.py` under specify app folder
 ```python
