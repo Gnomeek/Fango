@@ -14,6 +14,7 @@ def register_api(app: "Blueprint", view: "Type[ModelViewSet]", endpoint: str, ur
         method = method.upper()
         if method == "GET":
             app.add_url_rule(url, defaults={pk: None}, view_func=view_func, methods=["GET"])
+            pk_rule_list.append(method)
         elif method == "POST":
             app.add_url_rule(url, view_func=view_func, methods=["POST"])
         else:
