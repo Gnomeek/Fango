@@ -1,4 +1,6 @@
-from flask import make_response, jsonify
+from http import HTTPStatus
+
+from flask import jsonify, make_response
 
 from libs.viewset import ModelViewSet
 
@@ -10,4 +12,4 @@ class PingPong(ModelViewSet):
         pass
 
     def get(self, _id):
-        return make_response(jsonify({"msg": "pong"}), 200)
+        return make_response(jsonify({"msg": "pong"}), HTTPStatus.OK)
